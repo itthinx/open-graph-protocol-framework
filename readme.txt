@@ -132,6 +132,8 @@ Not much to see here, the plugin does its job automatically and doesn't need any
 = 1.2.0 =
 * Tested with WordPress 4.8.
 
+[Complete changelog](https://github.com/itthinx/open-graph-protocol-framework/blob/master/changelog.txt)
+
 == Upgrade Notice ==
 
 = 1.2.0 =
