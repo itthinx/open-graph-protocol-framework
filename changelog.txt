@@ -1,5 +1,8 @@
 == Open Graph Protocol Framework - WordPress plugin by itthinx - Changelog ==
 
+= 1.2.1 =
+* Plugin tags updated.
+
 = 1.2.0 =
 * Tested with WordPress 4.8.
 
