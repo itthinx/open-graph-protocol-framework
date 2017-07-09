@@ -3,8 +3,8 @@ Contributors: itthinx
 Donate link: http://www.itthinx.com/plugins/open-graph-protocol/
 Tags: ogp, open, open graph, open graph protocol, share, sharing, social, social network, twitter, linkedlin, facebook, pinterest, affiliates, meta, meta tag, meta tags, tag, tags
 Requires at least: 4.0
-Tested up to: 4.6
-Stable tag: 1.1.0
+Tested up to: 4.8
+Stable tag: 1.2.0
 License: GPLv3
 
 The Open Graph Protocol enables any web page to become a rich object in a social graph. This plugin renders meta tags within an extension framework.
@@ -129,56 +129,10 @@ Not much to see here, the plugin does its job automatically and doesn't need any
 
 == Changelog ==
 
-= 1.1.0 =
-* Added support for og:locale.
-* Added support for og:locale:alternate with WPML.
-
-= 1.0.10 =
-* WordPress 4.4 compatibility tested.
-* Fixed an issue with PHP Strict Standards when the deactivation hook is called.
-
-= 1.0.9 =
-* Fixed an issue with descriptions so that shortcodes are rendered
-  instead of being displayed as such.
-
-= 1.0.8 =
-* Fixed static method declaration.
-* WordPress 4.1 compatible.
-
-= 1.0.7 =
-* Fixed a bug producing PHP Notices when a 404 is returned.
-
-= 1.0.6 =
-* WordPress 3.8 compatibility checked.
-* Cleaned up whitespace and line endings.
-
-= 1.0.5 =
-
-* Using site description for og:description on home (thanks for the suggestion [Marc](http://www.beyondred.de/)).
-* WordPress 3.6 compatibility checked.
-
-= 1.0.4 =
-
-* Using $_SERVER to determine current URL
-* Fixed wrong tag used for og:site_name
-
-= 1.0.3 =
-
-* Fixed image metadata.
-
-= 1.0.2 =
-
-* Paths.
-
-= 1.0.1 =
-
-* Fixed path.
-
-= 1.0.0 =
-
-* First public release.
+= 1.2.0 =
+* Tested with WordPress 4.8.
 
 == Upgrade Notice ==
 
-= 1.1.0 =
-This release adds support for og:locale (and og:locale:alternate with WPML).
+= 1.2.0 =
+This release has been tested with WordPress 4.8.
