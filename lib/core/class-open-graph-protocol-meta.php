@@ -82,12 +82,10 @@ class Open_Graph_Protocol_Meta {
 		if ( isset( $post->post_type ) && post_type_supports( $post->post_type, 'thumbnail' ) && has_post_thumbnail() ) {
 			list( $src, $width, $height ) = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' );
 			if ( ! empty( $src ) ) {
+                                $metas['og:image'] = trim($src);
                                 $scheme = parse_url($src, PHP_URL_SCHEME);
-                                if($scheme == "http") {
-                                        $metas['og:image'] = trim($src);
-                                } else {
-                                        $metas['og:image'] = trim($src);
-                                        $metas['og:image:secure_url'] = trim($src);
+                                if($scheme == "https") {
+                                	$metas['og:image:secure_url'] = trim($src);
                                 }
 				if ( ! empty( $width ) ) {
 					$metas['og:image:width'] = intval( $width );
