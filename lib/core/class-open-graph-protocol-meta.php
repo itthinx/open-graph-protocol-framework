@@ -106,7 +106,9 @@ class Open_Graph_Protocol_Meta {
 		$description = '';
 		if ( is_singular() ) {
 			if ( isset( $post->post_type ) && post_type_supports( $post->post_type, 'excerpt' ) ) {
-				$description = self::flatten( apply_filters( 'get_the_excerpt', $post->post_excerpt ) );
+				if ( !empty( $post->post_excerpt ) ) {
+					$description = self::flatten( apply_filters( 'get_the_excerpt', $post->post_excerpt ) );
+				}
 			}
 			if ( empty( $description ) ) {
 				$excerpt_length = apply_filters( 'excerpt_length', 55 );
