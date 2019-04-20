@@ -86,7 +86,8 @@ class Open_Graph_Protocol_Options {
 	 *
 	 * @param string $option the option id
 	 * @param mixed $default default value to retrieve if option is not set
-	 * @return option value, $default if set or null
+	 *
+	 * @return mixed|null option value, $default if set or null
 	 */
 	public static function get_option( $option, $default = null ) {
 		$options = self::get_options();
@@ -100,11 +101,12 @@ class Open_Graph_Protocol_Options {
 
 	/**
 	 * Returns the value of a user setting.
-	 * 
+	 *
 	 * @param string $option the option id
 	 * @param mixed $default default value to retrieve if option is not set
 	 * @param int $user_id retrieve option for this user, defaults to null for current user
-	 * @return option value, $default if set or null
+	 *
+	 * @return mixed|null option value, $default if set or null
 	 */
 	public static function get_user_option( $option, $default = null, $user_id = null ) {
 		if ( $user_id === null ) {

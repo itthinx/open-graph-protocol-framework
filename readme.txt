@@ -1,10 +1,10 @@
 === Open Graph Protocol Framework ===
 Contributors: itthinx
 Donate link: http://www.itthinx.com/plugins/open-graph-protocol/
-Tags: ogp, open graph protocol, facebook, twitter, google+, open, open graph, share, sharing, social, social network, linkedlin, pinterest, affiliates, meta, meta tag, meta tags, tag, tags
-Requires at least: 4.0
-Tested up to: 4.9
-Stable tag: 1.2.2
+Tags: ogp, open graph protocol, facebook, twitter, google, open, open graph, share, sharing, social, social network, linkedlin, pinterest, affiliates, meta, meta tag, meta tags, tag, tags
+Requires at least: 4.6
+Tested up to: 5.1
+Stable tag: 1.3.0
 License: GPLv3
 
 The Open Graph Protocol enables any web page to become a rich object in a social graph. This plugin renders meta tags within an extension framework.
@@ -129,19 +129,11 @@ Not much to see here, the plugin does its job automatically and doesn't need any
 
 == Changelog ==
 
-= 1.2.2 =
-* Tested with WordPress 4.9.
-* Fixed a warning that would occur when trying to apply the get_the_excerpt filter on an empty $post->excerpt.
-
-= 1.2.1 =
-* Plugin tags updated.
-
-= 1.2.0 =
-* Tested with WordPress 4.8.
+= 1.3.0 =
+* WordPress 5.1 compatible.
 
 [Complete changelog](https://github.com/itthinx/open-graph-protocol-framework/blob/master/changelog.txt)
 
 == Upgrade Notice ==
 
-= 1.2.2 =
-This release has been tested with WordPress 4.9 and contains a minor fix for a PHP Warning in some cases.
+Compatible with the latest version of WordPress.
