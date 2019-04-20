@@ -1,5 +1,8 @@
 == Open Graph Protocol Framework - WordPress plugin by itthinx - Changelog ==
 
+= 1.3.0 =
+* WordPress 5.1 compatible.
+
 = 1.2.2 =
 * Tested with WordPress 4.9.
 * Fixed a warning that would occur when trying to apply the get_the_excerpt filter on an empty $post->excerpt.
