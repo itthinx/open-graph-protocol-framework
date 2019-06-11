@@ -129,11 +129,8 @@ Not much to see here, the plugin does its job automatically and doesn't need any
 
 == Changelog ==
 
-= 1.3.0 =
-* WordPress 5.1 compatible.
-
-[Complete changelog](https://github.com/itthinx/open-graph-protocol-framework/blob/master/changelog.txt)
+See the complete [changelog](https://github.com/itthinx/open-graph-protocol-framework/blob/master/changelog.txt) for details.
 
 == Upgrade Notice ==
 
-Compatible with the latest version of WordPress.
+Works with the latest version of WordPress.
