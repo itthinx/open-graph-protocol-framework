@@ -1,5 +1,8 @@
 == Open Graph Protocol Framework - WordPress plugin by itthinx - Changelog ==
 
+= 1.5.0 =
+* WordPress 5.4 compatible.
+
 = 1.4.0 =
 * WordPress 5.2 compatible.
 
