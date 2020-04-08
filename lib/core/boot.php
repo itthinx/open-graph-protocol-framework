@@ -18,8 +18,9 @@
  * @package open-graph-protocol
  * @since open-graph-protocol 1.0.0
  */
-include_once( OPEN_GRAPH_PROTOCOL_CORE_LIB . '/class-open-graph-protocol-options.php' );
-include_once( OPEN_GRAPH_PROTOCOL_CORE_LIB . '/class-open-graph-protocol.php' );
+
+require_once OPEN_GRAPH_PROTOCOL_CORE_LIB . '/class-open-graph-protocol-options.php';
+require_once OPEN_GRAPH_PROTOCOL_CORE_LIB . '/class-open-graph-protocol.php';
 if ( !is_admin() ) {
-	include_once( OPEN_GRAPH_PROTOCOL_CORE_LIB . '/class-open-graph-protocol-meta.php' );
+	require_once OPEN_GRAPH_PROTOCOL_CORE_LIB . '/class-open-graph-protocol-meta.php';
 }

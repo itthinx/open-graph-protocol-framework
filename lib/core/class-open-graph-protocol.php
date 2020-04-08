@@ -70,6 +70,7 @@ class Open_Graph_Protocol {
 
 	/**
 	 * Setup for a new blog.
+	 *
 	 * @param int $blog_id
 	 */
 	public static function wpmu_new_blog( $blog_id, $user_id ) {
@@ -102,6 +103,7 @@ class Open_Graph_Protocol {
 
 	/**
 	 * Retrieve current blogs' ids.
+	 *
 	 * @return array blog ids
 	 */
 	public static function get_blogs() {
@@ -125,6 +127,7 @@ class Open_Graph_Protocol {
 
 	/**
 	 * Determines if the plugin is site-wide.
+	 *
 	 * @return boolean true if site-wide plugin
 	 */
 	public static function is_sitewide_plugin() {

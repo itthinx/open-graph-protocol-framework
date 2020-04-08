@@ -1,19 +1,19 @@
 <?php
 /**
  * class-open-graph-protocol-options.php
- * 
+ *
  * Copyright (c) "kento" Karim Rahimpur www.itthinx.com
- * 
+ *
  * This code is released under the GNU General Public License.
  * See COPYRIGHT.txt and LICENSE.txt.
- * 
+ *
  * This code is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- * 
+ *
  * This header and all notices must be kept intact.
- * 
+ *
  * @author Karim Rahimpur
  * @package open-graph-protocol
  * @since open-graph-protocol 1.0.0
@@ -26,14 +26,14 @@ class Open_Graph_Protocol_Options {
 
 	/**
 	 * Option key.
-	 * 
+	 *
 	 * @var string
 	 */
 	const option_key = 'open_graph_protocol_options';
 
 	/**
 	 * General option index.
-	 * 
+	 *
 	 * @var string
 	 */
 	const general = 'general';
@@ -70,6 +70,7 @@ class Open_Graph_Protocol_Options {
 	/**
 	 * Returns the current options and initializes them
 	 * through init() if needed.
+	 *
 	 * @return array options
 	 */
 	private static function get_options() {
@@ -176,7 +177,7 @@ class Open_Graph_Protocol_Options {
 
 	/**
 	 * Deletes a user setting.
-	 * 
+	 *
 	 * @param string $option the option's id
 	 * @param int $user_id delete option for this user, defaults to null for current user
 	 */
