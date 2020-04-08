@@ -65,6 +65,15 @@ define( 'OPEN_GRAPH_PROTOCOL_VERSION', '1.5.0' );
  */
 define( 'OPEN_GRAPH_PROTOCOL_FILE', __FILE__ );
 
+if ( !defined( 'OPEN_GRAPH_PROTOCOL_DEBUG' ) ) {
+	/**
+	 * Plugin debug mode.
+	 *
+	 * @var boolean
+	 */
+	define( 'OPEN_GRAPH_PROTOCOL_DEBUG', false );
+}
+
 if ( !defined( 'OPEN_GRAPH_PROTOCOL_CORE_DIR' ) ) {
 	/**
 	 * Plugin directory.

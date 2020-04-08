@@ -18,10 +18,15 @@
  * @package open-graph-protocol
  * @since open-graph-protocol 1.0.0
  */
+
+/**
+ * Plugin helper class.
+ */
 class Open_Graph_Protocol_Helper {
 
 	/**
 	 * Returns the current page's title.
+	 *
 	 * @return string page title
 	 */
 	public static function get_title() {

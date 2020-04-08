@@ -160,8 +160,9 @@ class Open_Graph_Protocol_Meta {
 
 	/**
 	 * Reduces content to flat text only.
-	 * 
+	 *
 	 * @param string $content
+	 *
 	 * @return string
 	 */
 	private static function flatten( $content ) {
@@ -174,6 +175,14 @@ class Open_Graph_Protocol_Meta {
 		return $content;
 	}
 
+	/**
+	 * Produces and returns the meta tag.
+	 *
+	 * @param string $property
+	 * @param string $content
+	 *
+	 * @return string|mixed
+	 */
 	public static function render_meta( $property, $content ) {
 		if ( is_array( $content ) ) {
 			$contents = $content;
@@ -185,13 +194,16 @@ class Open_Graph_Protocol_Meta {
 			$output .= apply_filters(
 				'open_graph_protocol_meta_tag',
 				sprintf(
-					'<meta property="%s" content="%s" />',
+					'<meta property="%s" content="%s" />%s',
 					esc_attr( $property ),
-					esc_attr( apply_filters(
-						'open_graph_protocol_meta',
-						$content,
-						$property
-					) )
+					esc_attr(
+						apply_filters(
+							'open_graph_protocol_meta',
+							$content,
+							$property
+						)
+					),
+					OPEN_GRAPH_PROTOCOL_DEBUG ? '<!-- OGPF -->' : ''
 				),
 				$property,
 				$content
