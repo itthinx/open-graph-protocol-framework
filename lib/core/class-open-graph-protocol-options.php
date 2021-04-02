@@ -51,12 +51,6 @@ class Open_Graph_Protocol_Options {
 	}
 
 	/**
-	 * Would be pointless.
-	 */
-	private function __wakeup() {
-	}
-
-	/**
 	 * Registers options (not autoloaded).
 	 */
 	public static function init() {

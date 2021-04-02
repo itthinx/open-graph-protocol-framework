@@ -1,6 +1,6 @@
  Open Graph Protocol Framework                                     LICENSE.txt
 
- Copyright 2012 - 2020 "kento" (Karim Rahimpur) www.itthinx.com
+ Copyright 2012 - 2021 "kento" (Karim Rahimpur) www.itthinx.com
 
   The code and all files of this software are released under the
   GNU General Public License, Version 3. The following additional terms

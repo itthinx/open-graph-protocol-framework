@@ -136,9 +136,9 @@ class Open_Graph_Protocol_Meta {
 		} else {
 			$what = '';
 			if ( is_author() ) {
-				$what = __( 'Author', OPEN_GRAPH_PROTOCOL_PLUGIN_DOMAIN );
+				$what = esc_html__( 'Author', OPEN_GRAPH_PROTOCOL_PLUGIN_DOMAIN );
 			} else if ( is_archive() ) {
-				$what = __( 'Archive', OPEN_GRAPH_PROTOCOL_PLUGIN_DOMAIN );
+				$what = esc_html__( 'Archive', OPEN_GRAPH_PROTOCOL_PLUGIN_DOMAIN );
 			}
 			if ( !empty( $what ) ) {
 				$description = sprintf( '%s : %s', $what, $title );

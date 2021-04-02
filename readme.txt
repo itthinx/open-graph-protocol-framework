@@ -15,6 +15,8 @@ The [Open Graph protocol](http://ogp.me/) enables any web page to become a rich 
 
 This WordPress plugin is aimed at automating the process of adding basic and optional metadata to a site's pages. It is also designed to act as a framework for other plugins or themes and allows to modify and adapt the information provided as needed.
 
+If you find this plugin useful and would like to support our work, you can do so by purchasing in our [Shop](https://www.itthinx.com/shop/), thank you!
+
 ### Usage ###
 
 Install and activate the plugin. It will automatically render the following metadata for posts, pages, etc. :
