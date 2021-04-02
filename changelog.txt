@@ -1,5 +1,11 @@
 == Open Graph Protocol Framework - WordPress plugin by itthinx - Changelog ==
 
+= 1.6.0 =
+* WordPress 5.7 compatible.
+* Escaped unescape translated strings.
+* Removed an empty __wakeup() override triggering a warning with PHP 8.x.
+* Added plugin links.
+
 = 1.5.0 =
 * WordPress 5.4 compatible.
 * Minimum WordPress 5.0 required.

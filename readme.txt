@@ -3,8 +3,8 @@ Contributors: itthinx
 Donate link: http://www.itthinx.com/plugins/open-graph-protocol/
 Tags: ogp, open graph protocol, facebook, twitter, google, open, open graph, share, sharing, social, social network, linkedlin, pinterest, affiliates, meta, meta tag, meta tags, tag, tags
 Requires at least: 5.0
-Tested up to: 5.4
-Stable tag: 1.5.0
+Tested up to: 5.7
+Stable tag: 1.6.0
 License: GPLv3
 
 The Open Graph Protocol enables any web page to become a rich object in a social graph. This plugin renders meta tags within an extension framework.
@@ -14,6 +14,8 @@ The Open Graph Protocol enables any web page to become a rich object in a social
 The [Open Graph protocol](http://ogp.me/) enables any web page to become a rich object in a social graph. For instance, this is used on Facebook to allow any web page to have the same functionality as any other object on Facebook.
 
 This WordPress plugin is aimed at automating the process of adding basic and optional metadata to a site's pages. It is also designed to act as a framework for other plugins or themes and allows to modify and adapt the information provided as needed.
+
+If you find this plugin useful and would like to support our work, you can do so by purchasing in our [Shop](https://www.itthinx.com/shop/), thank you!
 
 ### Usage ###
 

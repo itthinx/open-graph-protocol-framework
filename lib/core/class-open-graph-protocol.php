@@ -30,6 +30,7 @@ class Open_Graph_Protocol {
 	public static function init() {
 		register_activation_hook( OPEN_GRAPH_PROTOCOL_FILE,	array( __CLASS__, 'activate' ) );
 		register_deactivation_hook( OPEN_GRAPH_PROTOCOL_FILE, array( __CLASS__, 'deactivate' ) );
+		add_filter( 'plugin_action_links_'. plugin_basename( OPEN_GRAPH_PROTOCOL_FILE ), array( __CLASS__, 'plugin_action_links' ) );
 	}
 
 	/**
@@ -163,6 +164,20 @@ class Open_Graph_Protocol {
 		if ( $delete_data ) {
 			Open_Graph_Protocol_Options::flush_options();
 		}
+	}
+
+	/**
+	 * Adds plugin links.
+	 *
+	 * @param array $links
+	 * @param string $file
+	 *
+	 * @return array
+	 */
+	public static function plugin_action_links( $links ) {
+		$links[] = '<a href="https://docs.itthinx.com/document/open-graph-protocol-framework/">' . esc_html__( 'Documentation', 'open-graph-protocol-framework' ) . '</a>';
+		$links[] = '<a href="https://www.itthinx.com/shop/">' . esc_html__( 'Shop', 'open-graph-protocol-framework' ) . '</a>';
+		return $links;
 	}
 }
 Open_Graph_Protocol::init();

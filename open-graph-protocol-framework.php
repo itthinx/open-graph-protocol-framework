@@ -2,14 +2,14 @@
 /**
  * Plugin Name: Open Graph Protocol
  * Plugin URI: http://www.itthinx.com/plugins/open-graph-protocol
- * Description: The Open Graph Protocol enables any web page to become a rich object in a social graph.
- * Version: 1.5.0
+ * Description: The Open Graph Protocol enables any web page to become a rich object in a social graph. If you would like to support our work, please visit our <a href="https://www.itthinx.com/shop/">Shop</a>.
+ * Version: 1.6.0
  * Author: itthinx
  * Author URI: https://www.itthinx.com
  * Donate-Link: https://www.itthinx.com/shop/
  * License: GPLv3
  *
- * Copyright (c) 2012 - 2020 "kento" Karim Rahimpur www.itthinx.com
+ * Copyright (c) 2012 - 2021 "kento" Karim Rahimpur www.itthinx.com
  *
  * This code is released under the GNU General Public License Version 3.
  * The following additional terms apply to all files as per section
@@ -56,7 +56,7 @@
  *
  * @var string
  */
-define( 'OPEN_GRAPH_PROTOCOL_VERSION', '1.5.0' );
+define( 'OPEN_GRAPH_PROTOCOL_VERSION', '1.6.0' );
 
 /**
  * Plugin main file.
