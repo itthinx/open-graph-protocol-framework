@@ -106,7 +106,7 @@ The logo used for this plugin's icon and banner is the [Open Graph protocol logo
 
 == Installation ==
 
-See also the [Open Graph Protocol](https://www.itthinx.com/plugin/open-graph-protocol/) plugin pages and [documentation](http://docs.itthinx.com/document/open-graph-protocol-framework/).
+See also the [Open Graph Protocol](https://www.itthinx.com/plugin/open-graph-protocol/) plugin pages and [documentation](https://docs.itthinx.com/document/open-graph-protocol-framework/).
 
 1. Use the *Add new* option found in the *Plugins* menu in WordPress and search for *Open Graph Protocol* or upload the plugin zip file or extract the `open-graph-protocol` folder to your site's `/wp-content/plugins/` directory.
 2. Enable the plugin from the *Plugins* menu in WordPress.
