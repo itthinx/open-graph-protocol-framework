@@ -2,6 +2,9 @@
 
 = 1.7.0 =
 * WordPress 6.0 compatible.
+* Added support for the og:image:url property.
+* Added support for the og:image:secure_url property.
+* Added support for the og:image:alt property, taking its content in order of availability from the image alt text, the image caption or the image description of the post's featured image.
 
 = 1.6.0 =
 * WordPress 5.7 compatible.
