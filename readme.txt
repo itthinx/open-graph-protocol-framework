@@ -23,12 +23,14 @@ Install and activate the plugin. It will automatically render the following meta
 
 - `og:title` : The page's title is used, this provides the title for posts, pages, archives etc.
 - `og:type` : The type will be `article` in general, `website` for the front page and `blog` for the blog homepage.
-- `og:image` : For post types that support featured images, the URL of the featured image is used. Additional metadata `og:image:width` and `og:image:height` is added.
+- `og:image` : For post types that support featured images, the URL of the featured image is used. Additional metadata `og:image:width`, `og:image:height`, `og:image:url`, `og:image:secure_url` and `og:image:alt` are added.
 - `og:url` : The URL of the current page.
 - `og:site_name` : The name of the site.
 - `og:description` : Uses the full excerpt if available, otherwise derives it from the content. For author and archive pages, the type of page and title is used.
 - `og:locale` : The current locale.
 - `og:locale:alternate` : Indicates additional locales available if [WPML](http://wpml.org/) is installed.
+
+The content of the `og:image:alt` property is based on the Alt Text of the featured image, the image's Caption in lack thereof, or ultimately the image's Description in lack of the latter. If any of those are empty, the property is not rendered.
 
 ### Filters ###
 
