@@ -80,14 +80,37 @@ class Open_Graph_Protocol_Meta {
 
 		// image
 		if ( isset( $post->post_type ) && post_type_supports( $post->post_type, 'thumbnail' ) && has_post_thumbnail() ) {
-			list( $src, $width, $height ) = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' );
-			if ( ! empty( $src ) ) {
-				$metas['og:image'] = $src;
-				if ( ! empty( $width ) ) {
-					$metas['og:image:width'] = intval( $width );
-				}
-				if ( ! empty( $height ) ) {
-					$metas['og:image:height'] = intval( $height );
+			$attachment_id = get_post_thumbnail_id( $post->ID );
+			if ( $attachment_id ) {
+				list( $src, $width, $height ) = wp_get_attachment_image_src( $attachment_id, 'full' );
+				if ( ! empty( $src ) ) {
+					$metas['og:image'] = $src;
+					$metas['og:image:url'] = $src;
+					$metas['og:image:secure_url'] = str_replace( 'http://', 'https://', $src );
+					if ( ! empty( $width ) ) {
+						$metas['og:image:width'] = intval( $width );
+					}
+					if ( ! empty( $height ) ) {
+						$metas['og:image:height'] = intval( $height );
+					}
+					// og:image:alt
+					$alt = get_post_meta( $attachment_id, '_wp_attachment_image_alt', true );
+					if ( !empty( $alt ) ) {
+						$metas['og:image:alt'] = $alt;
+					} else {
+						$caption = wp_get_attachment_caption( $attachment_id );
+						if ( !empty( $caption ) ) {
+							$metas['og:image:alt'] = $caption;
+						} else {
+							$attachment_post = get_post( $attachment_id );
+							if ( $attachment_post instanceof WP_Post ) {
+								$attachment_post_content = $attachment_post->post_content;
+								if ( !empty( $attachment_post_content ) ) {
+									$metas['og:image:alt'] = $attachment_post_content;
+								}
+							}
+						}
+					}
 				}
 			}
 		}
