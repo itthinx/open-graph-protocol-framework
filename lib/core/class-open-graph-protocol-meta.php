@@ -217,7 +217,7 @@ class Open_Graph_Protocol_Meta {
 			$output .= apply_filters(
 				'open_graph_protocol_meta_tag',
 				sprintf(
-					'<meta property="%s" content="%s" />%s',
+					'<meta property="%s" content="%s" />%s%s',
 					esc_attr( $property ),
 					esc_attr(
 						apply_filters(
@@ -226,7 +226,8 @@ class Open_Graph_Protocol_Meta {
 							$property
 						)
 					),
-					OPEN_GRAPH_PROTOCOL_DEBUG ? '<!-- OGPF -->' : ''
+					OPEN_GRAPH_PROTOCOL_DEBUG ? sprintf( '<!-- OGPF %s -->', esc_html( OPEN_GRAPH_PROTOCOL_VERSION ) ) : '',
+					apply_filters( 'open_graph_protocol_meta_tag_suffix', "\n" )
 				),
 				$property,
 				$content
