@@ -1,5 +1,8 @@
 == Open Graph Protocol Framework - WordPress plugin by itthinx - Changelog ==
 
+= 1.8.0 =
+* WordPress 6.1 compatible.
+
 = 1.7.0 =
 * WordPress 6.0 compatible.
 * Added support for the og:image:url property.
