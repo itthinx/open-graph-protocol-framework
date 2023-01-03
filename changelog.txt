@@ -2,6 +2,7 @@
 
 = 1.8.0 =
 * WordPress 6.1 compatible.
+* Requires at least WordPress 5.8.
 
 = 1.7.0 =
 * WordPress 6.0 compatible.
