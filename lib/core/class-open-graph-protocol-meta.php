@@ -139,7 +139,7 @@ class Open_Graph_Protocol_Meta {
 				// themes add a link saying "Continue reading" here which doesn't
 				// make sense in the description. Leaving for reference and reminder
 				// not to use it.
-				//$excerpt_more   = apply_filters( 'excerpt_more', ' ' . '[...]' );
+				// $excerpt_more = apply_filters( 'excerpt_more', ' ' . '[...]' );
 				// wp_trim_words() already applies wp_strip_all_tags() but it doesn't
 				// compact whitespace.
 
