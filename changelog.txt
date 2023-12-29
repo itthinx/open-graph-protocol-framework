@@ -2,6 +2,9 @@
 
 = 1.9.0 =
 * WordPress 6.4 compatible.
+* Requires at least WordPress 6.0.
+* Requires at least PHP 7.4.
+* Added compatibility plugin header fields.
 
 = 1.8.0 =
 * WordPress 6.1 compatible.

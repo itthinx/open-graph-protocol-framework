@@ -2,8 +2,9 @@
 Contributors: itthinx
 Donate link: https://www.itthinx.com/shop/
 Tags: ogp, open graph protocol, facebook, twitter, google, open, open graph, share, sharing, social, social network, linkedlin, pinterest, affiliates, meta, meta tag, meta tags, tag, tags
-Requires at least: 5.8
+Requires at least: 6.0
 Tested up to: 6.4
+Requires PHP: 7.4
 Stable tag: 1.9.0
 License: GPLv3
 
