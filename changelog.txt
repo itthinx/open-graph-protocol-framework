@@ -2,6 +2,8 @@
 
 = 2.0.0 =
 * WordPress 6.8 compatible.
+* Adds support for Polylang to render og:locale:alternate and og:locale.
+* Updated support for WPML to render og:locale if needed.
 
 = 1.10.0 =
 * WordPress 6.8 compatible.
