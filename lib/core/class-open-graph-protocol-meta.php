@@ -33,6 +33,9 @@ class Open_Graph_Protocol_Meta {
 
 	/**
 	 * Hooked on wp_head to render meta tags in head.
+	 *
+	 * @see https://ogp.me
+	 * @see https://developers.facebook.com/docs/sharing/webmasters/#markup
 	 */
 	public static function wp_head() {
 
@@ -57,34 +60,6 @@ class Open_Graph_Protocol_Meta {
 		$locale = get_locale();
 		if ( !empty( $locale ) ) {
 			$metas['og:locale'] = $locale;
-		}
-
-		// WPML
-		//
-		// og:locale:alternate - An array of other locales this page is available in.
-		//
-		if ( isset( $sitepress ) && method_exists( $sitepress, 'get_locale_file_names') ) {
-			$locales = $sitepress->get_locale_file_names();
-			foreach( $locales as $code => $wpml_locale ) {
-				if ( is_string( $wpml_locale ) && strlen( $wpml_locale ) > 0 && $wpml_locale !== $locale ) {
-					$metas['og:locale:alternate'][] = $wpml_locale;
-				}
-			}
-		}
-
-		// Polylang
-		//
-		// og:locale:alternate - An array of other locales this page is available in.
-		//
-		if ( function_exists( 'pll_languages_list' ) ) {
-			$languages = pll_languages_list();
-			if ( is_array( $languages ) && count( $languages ) > 0 ) {
-				foreach ( $languages as $language ) {
-					if ( is_string( $language ) && strlen( $language ) > 0 && $language !== $locale ) {
-						$metas['og:locale:alternate'][] = $language;
-					}
-				}
-			}
 		}
 
 		// type

@@ -108,6 +108,14 @@ if ( !defined( 'OPEN_GRAPH_PROTOCOL_UTY_LIB' ) ) {
 	 */
 	define( 'OPEN_GRAPH_PROTOCOL_UTY_LIB', OPEN_GRAPH_PROTOCOL_CORE_DIR . '/lib/uty' );
 }
+if ( !defined( 'OPEN_GRAPH_PROTOCOL_EXT_LIB' ) ) {
+	/**
+	 * Plugin ext directory.
+	 *
+	 * @var string
+	 */
+	define( 'OPEN_GRAPH_PROTOCOL_EXT_LIB', OPEN_GRAPH_PROTOCOL_CORE_DIR . '/lib/ext' );
+}
 if ( !defined( 'OPEN_GRAPH_PROTOCOL_CORE_URL' ) ) {
 	/**
 	 * Plugin core URL.

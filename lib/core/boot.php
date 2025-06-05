@@ -24,3 +24,13 @@ require_once OPEN_GRAPH_PROTOCOL_CORE_LIB . '/class-open-graph-protocol.php';
 if ( !is_admin() ) {
 	require_once OPEN_GRAPH_PROTOCOL_CORE_LIB . '/class-open-graph-protocol-meta.php';
 }
+
+/**
+ * Pull in extensions support.
+ *
+ * @since 2.0.0
+ */
+function open_graph_protocol_framework_plugins_loaded() {
+	require_once OPEN_GRAPH_PROTOCOL_EXT_LIB . '/class-open-graph-protocol-ext.php';
+}
+add_action( 'plugins_loaded', 'open_graph_protocol_framework_plugins_loaded' );
