@@ -51,7 +51,8 @@ class Open_Graph_Protocol_Polylang {
 			if ( is_array( $locales ) && count( $locales ) > 0 ) {
 				foreach ( $locales as $_locale ) {
 					if ( is_string( $_locale ) && strlen( $_locale ) > 0 && $_locale !== $locale ) {
-						$language = array_shift( explode( '_', $_locale ) );
+						$bits = explode( '_', $_locale );
+						$language = array_shift( $bits );
 						if ( array_key_exists( $language, $translations ) ) {
 							$metas['og:locale:alternate'][] = $_locale;
 						}
