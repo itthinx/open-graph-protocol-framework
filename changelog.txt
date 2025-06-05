@@ -8,6 +8,7 @@
 * Added support for the product:price:currency property.
 * Added support for the product:availability property.
 * Added the filter open_graph_protocol_framework_ext.
+* Added the metadata generator comment.
 
 = 1.10.0 =
 * WordPress 6.8 compatible.
