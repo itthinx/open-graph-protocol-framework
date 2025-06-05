@@ -168,8 +168,11 @@ class Open_Graph_Protocol_Meta {
 		$metas = apply_filters( 'open_graph_protocol_metas', $metas );
 
 		$m = '';
-		foreach( $metas as $property => $content ) {
-			$m .= self::render_meta( $property, $content );
+		if ( count( $metas ) > 0 ) {
+			$m .= sprintf( '<!-- Metadata generated with the Open Graph Protocol Framework plugin %s - %s - %s -->', esc_html( OPEN_GRAPH_PROTOCOL_VERSION ), 'https://wordpress.org/plugins/open-graph-protocol-framework/', 'https://www.itthinx.com/plugins/open-graph-protocol/' );
+			foreach( $metas as $property => $content ) {
+				$m .= self::render_meta( $property, $content );
+			}
 		}
 
 		echo apply_filters( 'open_graph_protocol_echo_metas', $m );
