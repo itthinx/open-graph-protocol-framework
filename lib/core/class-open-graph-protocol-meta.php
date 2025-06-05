@@ -60,32 +60,28 @@ class Open_Graph_Protocol_Meta {
 		}
 
 		// WPML
+		//
+		// og:locale:alternate - An array of other locales this page is available in.
+		//
 		if ( isset( $sitepress ) && method_exists( $sitepress, 'get_locale_file_names') ) {
 			$locales = $sitepress->get_locale_file_names();
 			foreach( $locales as $code => $wpml_locale ) {
 				if ( is_string( $wpml_locale ) && strlen( $wpml_locale ) > 0 && $wpml_locale !== $locale ) {
-					if ( empty( $locale ) ) {
-						$metas['og:locale'] = $wpml_locale;
-					}
 					$metas['og:locale:alternate'][] = $wpml_locale;
 				}
 			}
 		}
 
 		// Polylang
-		if ( function_exists( 'pll_current_language' ) ) {
-			$current_language = pll_current_language();
-			if ( is_string( $current_language ) && strlen( $current_language ) > 0 ) {
-				/**
-				* @var PLL_Language $o
-				*/
-				$pll_language = pll_current_language( \OBJECT );
-				if ( $pll_language instanceof PLL_Language && property_exists( $pll_language, 'locale' ) ) {
-					if ( is_string( $pll_language->locale ) && strlen( $pll_language->locale ) > 0 && $pll_language->locale !== $locale ) {
-						if ( empty( $locale ) ) {
-							$metas['og:locale'] = $pll_language->locale;
-						}
-						$metas['og:locale:alternate'][] = $pll_language->locale;
+		//
+		// og:locale:alternate - An array of other locales this page is available in.
+		//
+		if ( function_exists( 'pll_languages_list' ) ) {
+			$languages = pll_languages_list();
+			if ( is_array( $languages ) && count( $languages ) > 0 ) {
+				foreach ( $languages as $language ) {
+					if ( is_string( $language ) && strlen( $language ) > 0 && $language !== $locale ) {
+						$metas['og:locale:alternate'][] = $language;
 					}
 				}
 			}
