@@ -1,7 +1,7 @@
 === Open Graph Protocol Framework ===
 Contributors: itthinx
 Donate link: https://www.itthinx.com/shop/
-Tags: ogp, open graph protocol, facebook, twitter, google, open, open graph, share, sharing, social, social network, linkedlin, pinterest, affiliates, meta, meta tag, meta tags, tag, tags
+Tags: ogp, open graph protocol, facebook, X, google
 Requires at least: 6.0
 Tested up to: 6.8
 Requires PHP: 7.4

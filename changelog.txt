@@ -10,6 +10,7 @@
 * Added the filter open_graph_protocol_framework_ext.
 * Added the metadata generator comment.
 * Revised WPML support to render og:locale:alternate when translations exist.
+* Revised plugin tags.
 
 = 1.10.0 =
 * WordPress 6.8 compatible.
