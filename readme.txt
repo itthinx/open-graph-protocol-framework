@@ -5,7 +5,7 @@ Tags: ogp, open graph protocol, facebook, twitter, google, open, open graph, sha
 Requires at least: 6.0
 Tested up to: 6.8
 Requires PHP: 7.4
-Stable tag: 1.10.0
+Stable tag: 2.0.0
 License: GPLv3
 
 The Open Graph Protocol enables any web page to become a rich object in a social graph. This plugin renders meta tags within an extension framework.
