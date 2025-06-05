@@ -1,11 +1,11 @@
 === Open Graph Protocol Framework ===
 Contributors: itthinx
 Donate link: https://www.itthinx.com/shop/
-Tags: ogp, open graph protocol, facebook, twitter, google, open, open graph, share, sharing, social, social network, linkedlin, pinterest, affiliates, meta, meta tag, meta tags, tag, tags
+Tags: ogp, open graph protocol, facebook, X, google
 Requires at least: 6.0
 Tested up to: 6.8
 Requires PHP: 7.4
-Stable tag: 1.10.0
+Stable tag: 2.0.0
 License: GPLv3
 
 The Open Graph Protocol enables any web page to become a rich object in a social graph. This plugin renders meta tags within an extension framework.
@@ -18,6 +18,8 @@ This WordPress plugin is aimed at automating the process of adding basic and opt
 
 If you find this plugin useful and would like to support our work, you can do so by purchasing in our [Shop](https://www.itthinx.com/shop/), thank you!
 
+Supports [WooCommerce](https://wordpress.org/plugins/woocommerce/) to include essential product metadata on product pages.
+
 ### Usage ###
 
 Install and activate the plugin. It will automatically render the following metadata for posts, pages, etc. :
@@ -29,7 +31,7 @@ Install and activate the plugin. It will automatically render the following meta
 - `og:site_name` : The name of the site.
 - `og:description` : Uses the full excerpt if available, otherwise derives it from the content. For author and archive pages, the type of page and title is used.
 - `og:locale` : The current locale.
-- `og:locale:alternate` : Indicates additional locales available if [WPML](https://wpml.org/) is installed.
+- `og:locale:alternate` : Indicates additional locales available with [WPML](https://wpml.org/) and [Polylang](https://wordpress.org/plugins/polylang/).
 
 The content of the `og:image:alt` property is based on the Alt Text of the featured image, the image's Caption in lack thereof, or ultimately the image's Description in lack of the latter. If any of those are empty, the property is not rendered.
 
@@ -64,6 +66,7 @@ Parameters:
 - `string` `content` - the value of the `content` attribute
 
 Filters must return:
+
 - `string` the desired output for the HTML `<meta>` tag
 
 #### `open_graph_protocol_metas` ####
@@ -75,6 +78,7 @@ Parameters:
 - `array` of metadata indexed by metadata name
 
 Filters must return:
+
 - `array` of metadata indexed by metadata name
 
 #### `open_graph_protocol_echo_metas` ####
@@ -86,7 +90,22 @@ Parameters:
 - `string` HTML with `<meta>` tags to be rendered
 
 Filters must return:
+
 - `string` HTML with `<meta>` tags to be rendered
+
+#### `open_graph_protocol_framework_ext` ####
+
+This filter allows to determine whether additional meta tags should be produced for supported integrations.
+
+Parameters:
+
+- `boolean` whether to process the integration
+- `string` the integration
+
+Filters must return:
+
+- `boolean` whether to process additional meta tags for the integration
+
 
 ### Why this plugin? ###
 
@@ -104,6 +123,13 @@ None of the existing plugins provided a sufficiently flexible way of doing that,
 ### Logo Attribution ###
 
 The logo used for this plugin's icon and banner is the [Open Graph protocol logo](https://commons.wikimedia.org/wiki/File:Open_Graph_protocol_logo.png#/media/File:Open_Graph_protocol_logo.png) by Facebook - [ogp.me](https://ogp.me). Licensed under Public Domain via [Wikimedia Commons](https://commons.wikimedia.org/wiki/).
+
+### Validators ###
+
+To test the generated metadata you can use several tools, among those:
+
+- [X Card Validator](https://cards-dev.x.com/validator)
+- [Meta Sharing Debugger](https://developers.facebook.com/tools/debug/)
 
 == Installation ==
 

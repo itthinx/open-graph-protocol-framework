@@ -33,6 +33,9 @@ class Open_Graph_Protocol_Meta {
 
 	/**
 	 * Hooked on wp_head to render meta tags in head.
+	 *
+	 * @see https://ogp.me
+	 * @see https://developers.facebook.com/docs/sharing/webmasters/#markup
 	 */
 	public static function wp_head() {
 
@@ -57,15 +60,6 @@ class Open_Graph_Protocol_Meta {
 		$locale = get_locale();
 		if ( !empty( $locale ) ) {
 			$metas['og:locale'] = $locale;
-		}
-		// WPML
-		if ( isset( $sitepress ) && method_exists( $sitepress, 'get_locale_file_names') ) {
-			$locales = $sitepress->get_locale_file_names();
-			foreach( $locales as $code => $wpml_locale ) {
-				if ( $wpml_locale != $locale ) {
-					$metas['og:locale:alternate'][] = $wpml_locale;
-				}
-			}
 		}
 
 		// type
@@ -174,8 +168,11 @@ class Open_Graph_Protocol_Meta {
 		$metas = apply_filters( 'open_graph_protocol_metas', $metas );
 
 		$m = '';
-		foreach( $metas as $property => $content ) {
-			$m .= self::render_meta( $property, $content );
+		if ( count( $metas ) > 0 ) {
+			$m .= sprintf( '<!-- Metadata generated with the Open Graph Protocol Framework plugin %s - %s - %s -->', esc_html( OPEN_GRAPH_PROTOCOL_VERSION ), 'https://wordpress.org/plugins/open-graph-protocol-framework/', 'https://www.itthinx.com/plugins/open-graph-protocol/' );
+			foreach( $metas as $property => $content ) {
+				$m .= self::render_meta( $property, $content );
+			}
 		}
 
 		echo apply_filters( 'open_graph_protocol_echo_metas', $m );
