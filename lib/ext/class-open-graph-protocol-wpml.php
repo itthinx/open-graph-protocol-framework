@@ -37,9 +37,19 @@ class Open_Graph_Protocol_WPML {
 	public static function open_graph_protocol_metas( $metas ) {
 
 		global $post, $sitepress;
-		$current_url = ( is_ssl() ? 'https://' : 'http://' ) . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+		// $current_url = ( is_ssl() ? 'https://' : 'http://' ) . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+
+		if ( !isset( $post ) ) {
+			return $metas;
+		}
 
 		$locale = get_locale();
+
+		$languages = array();
+		$element_translations = apply_filters( 'wpml_get_element_translations', null, $post->ID );
+		if ( is_array( $element_translations ) ) {
+			$languages = array_keys( $element_translations );
+		}
 
 		//
 		// og:locale:alternate - An array of other locales this page is available in.
@@ -47,8 +57,10 @@ class Open_Graph_Protocol_WPML {
 		if ( isset( $sitepress ) && method_exists( $sitepress, 'get_locale_file_names') ) {
 			$locales = $sitepress->get_locale_file_names();
 			foreach( $locales as $code => $wpml_locale ) {
-				if ( is_string( $wpml_locale ) && strlen( $wpml_locale ) > 0 && $wpml_locale !== $locale ) {
-					$metas['og:locale:alternate'][] = $wpml_locale;
+				if ( in_array( $code, $languages ) ) {
+					if ( is_string( $wpml_locale ) && strlen( $wpml_locale ) > 0 && $wpml_locale !== $locale ) {
+						$metas['og:locale:alternate'][] = $wpml_locale;
+					}
 				}
 			}
 		}

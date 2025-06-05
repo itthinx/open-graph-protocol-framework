@@ -39,6 +39,10 @@ class Open_Graph_Protocol_Polylang {
 		global $post;
 		// $current_url = ( is_ssl() ? 'https://' : 'http://' ) . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 
+		if ( !isset( $post ) ) {
+			return $metas;
+		}
+
 		$locale = get_locale();
 
 		//

@@ -2,13 +2,14 @@
 
 = 2.0.0 =
 * WordPress 6.8 compatible.
-* Adds support for Polylang to render og:locale:alternate.
+* Adds support for Polylang to render og:locale:alternate when translations exist.
 * Adds support for WooCommerce product data.
 * Added support for the product:price:amount property.
 * Added support for the product:price:currency property.
 * Added support for the product:availability property.
 * Added the filter open_graph_protocol_framework_ext.
 * Added the metadata generator comment.
+* Revised WPML support to render og:locale:alternate when translations exist.
 
 = 1.10.0 =
 * WordPress 6.8 compatible.
