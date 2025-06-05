@@ -42,7 +42,7 @@ class Open_Graph_Protocol_WooCommerce {
 
 		if ( is_singular() ) {
 			if ( $post->post_type === 'product' ) {
-				if ( class_exists( 'WC_Product' ) ) {
+				if ( function_exists( 'wc_get_product' ) && class_exists( 'WC_Product' ) ) {
 					$product = wc_get_product( $post );
 					if ( $product instanceof WC_Product ) {
 						$price = wc_get_price_to_display( $product );
