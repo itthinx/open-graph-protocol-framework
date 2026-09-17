@@ -1,5 +1,8 @@
 == Open Graph Protocol Framework - WordPress plugin by itthinx - Changelog ==
 
+= 3.0.0 =
+* WordPress 7.1 compatible.
+
 = 2.1.0 =
 * WordPress 6.9 compatible.
 
