@@ -19,6 +19,10 @@
  * @since open-graph-protocol 2.0.0
  */
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * WooCommerce support, metadata.
  */

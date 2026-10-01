@@ -19,6 +19,10 @@
  * @since open-graph-protocol 1.0.0
  */
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * Metadata renderer.
  */
@@ -40,7 +44,7 @@ class Open_Graph_Protocol_Meta {
 	public static function wp_head() {
 
 		global $post, $sitepress;
-		$current_url = ( is_ssl() ? 'https://' : 'http://' ) . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+		$current_url = ( is_ssl() ? 'https://' : 'http://' ) . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; // phpcs:ignore WordPress.Security.ValidatedSanitizedInput
 
 		$metas = array();
 
@@ -110,7 +114,7 @@ class Open_Graph_Protocol_Meta {
 		}
 
 		// url
-		$metas['og:url'] = $current_url; // using get_permalink() is wrong here for cases like archive or front page
+		$metas['og:url'] = esc_url( $current_url ); // using get_permalink() is wrong here for cases like archive or front page
 
 		//
 		// More Metadata
@@ -124,11 +128,11 @@ class Open_Graph_Protocol_Meta {
 		if ( is_singular() ) {
 			if ( isset( $post->post_type ) && post_type_supports( $post->post_type, 'excerpt' ) ) {
 				if ( !empty( $post->post_excerpt ) ) {
-					$description = self::flatten( apply_filters( 'get_the_excerpt', $post->post_excerpt ) );
+					$description = self::flatten( apply_filters( 'get_the_excerpt', $post->post_excerpt ) ); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
 				}
 			}
 			if ( empty( $description ) ) {
-				$excerpt_length = apply_filters( 'excerpt_length', 55 );
+				$excerpt_length = apply_filters( 'excerpt_length', 55 ); //phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
 				// This wouldn't be so smart ... for example the default Twenty X
 				// themes add a link saying "Continue reading" here which doesn't
 				// make sense in the description. Leaving for reference and reminder
@@ -140,7 +144,7 @@ class Open_Graph_Protocol_Meta {
 				// Get the content and apply filters so that shortcodes etc
 				// are rendered instead of being displayed as such.
 				$content = $post->post_content;
-				$content = apply_filters( 'the_content', $content );
+				$content = apply_filters( 'the_content', $content ); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
 				$content = str_replace( ']]>', ']]&gt;', $content );
 				$content = self::flatten( $content );
 				$description = wp_trim_words( $content, $excerpt_length, ' &hellip;' );
@@ -153,9 +157,9 @@ class Open_Graph_Protocol_Meta {
 		} else {
 			$what = '';
 			if ( is_author() ) {
-				$what = esc_html__( 'Author', OPEN_GRAPH_PROTOCOL_PLUGIN_DOMAIN );
+				$what = esc_html__( 'Author', 'open-graph-protocol-framework' );
 			} else if ( is_archive() ) {
-				$what = esc_html__( 'Archive', OPEN_GRAPH_PROTOCOL_PLUGIN_DOMAIN );
+				$what = esc_html__( 'Archive', 'open-graph-protocol-framework' );
 			}
 			if ( !empty( $what ) ) {
 				$description = sprintf( '%s : %s', $what, $title );
@@ -175,7 +179,7 @@ class Open_Graph_Protocol_Meta {
 			}
 		}
 
-		echo apply_filters( 'open_graph_protocol_echo_metas', $m );
+		echo apply_filters( 'open_graph_protocol_echo_metas', $m ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	}
 
 	/**

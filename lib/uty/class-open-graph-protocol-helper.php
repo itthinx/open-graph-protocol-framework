@@ -19,6 +19,10 @@
  * @since open-graph-protocol 1.0.0
  */
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * Plugin helper class.
  */

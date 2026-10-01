@@ -19,6 +19,10 @@
  * @since open-graph-protocol 1.0.0
  */
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * Plugin core class.
  */
@@ -41,7 +45,6 @@ class Open_Graph_Protocol {
 			$blog_ids = self::get_blogs();
 			foreach ( $blog_ids as $blog_id ) {
 				switch_to_blog( $blog_id );
-				wp_cache_reset();
 				self::setup();
 				restore_current_blog();
 			}
@@ -59,7 +62,6 @@ class Open_Graph_Protocol {
 				$blog_ids = self::get_blogs();
 				foreach ( $blog_ids as $blog_id ) {
 					switch_to_blog( $blog_id );
-					wp_cache_reset();
 					self::cleanup( true );
 					restore_current_blog();
 				}
@@ -78,7 +80,6 @@ class Open_Graph_Protocol {
 		if ( is_multisite() ) {
 			if (self::is_sitewide_plugin() ) {
 				switch_to_blog( $blog_id );
-				wp_cache_reset();
 				self::setup();
 				restore_current_blog();
 			}
@@ -95,7 +96,6 @@ class Open_Graph_Protocol {
 		if ( is_multisite() ) {
 			if ( self::is_sitewide_plugin() ) {
 				switch_to_blog( $blog_id );
-				wp_cache_reset();
 				self::cleanup( $drop );
 				restore_current_blog();
 			}
@@ -111,6 +111,7 @@ class Open_Graph_Protocol {
 		global $wpdb;
 		$result = array();
 		if ( is_multisite() ) {
+			// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching
 			$blogs = $wpdb->get_results( $wpdb->prepare(
 				"SELECT blog_id FROM $wpdb->blogs WHERE site_id = %d AND archived = '0' AND spam = '0' AND deleted = '0'",
 				$wpdb->siteid
