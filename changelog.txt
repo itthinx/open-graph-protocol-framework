@@ -2,7 +2,9 @@
 
 = 3.0.0 =
 * WordPress 7.1 compatible.
-* Replaced plugin domain constant with string literal.
+* Replaced instances of language domain constant with string literal.
+* Validation WordPress.Security.EscapeOutput.OutputNotEscaped.
+* Removed calls to deprecated wp_cache_reset().
 * Replaced add_option() deprecated argument.
 * Added bypassing comments for false-positive warnings.
 * Added missing restriction to prevent direct access to scripts.
