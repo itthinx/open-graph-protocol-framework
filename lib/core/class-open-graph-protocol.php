@@ -41,7 +41,6 @@ class Open_Graph_Protocol {
 			$blog_ids = self::get_blogs();
 			foreach ( $blog_ids as $blog_id ) {
 				switch_to_blog( $blog_id );
-				wp_cache_reset();
 				self::setup();
 				restore_current_blog();
 			}
@@ -59,7 +58,6 @@ class Open_Graph_Protocol {
 				$blog_ids = self::get_blogs();
 				foreach ( $blog_ids as $blog_id ) {
 					switch_to_blog( $blog_id );
-					wp_cache_reset();
 					self::cleanup( true );
 					restore_current_blog();
 				}
@@ -78,7 +76,6 @@ class Open_Graph_Protocol {
 		if ( is_multisite() ) {
 			if (self::is_sitewide_plugin() ) {
 				switch_to_blog( $blog_id );
-				wp_cache_reset();
 				self::setup();
 				restore_current_blog();
 			}
@@ -95,7 +92,6 @@ class Open_Graph_Protocol {
 		if ( is_multisite() ) {
 			if ( self::is_sitewide_plugin() ) {
 				switch_to_blog( $blog_id );
-				wp_cache_reset();
 				self::cleanup( $drop );
 				restore_current_blog();
 			}
