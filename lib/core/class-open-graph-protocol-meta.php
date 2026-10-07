@@ -114,7 +114,7 @@ class Open_Graph_Protocol_Meta {
 		}
 
 		// url
-		$metas['og:url'] = esc_url( $current_url ); // using get_permalink() is wrong here for cases like archive or front page
+		$metas['og:url'] = $current_url; // using get_permalink() is wrong here for cases like archive or front page
 
 		//
 		// More Metadata
