@@ -15,9 +15,13 @@
  * This header and all notices must be kept intact.
  *
  * @author Karim Rahimpur
- * @package open-graph-protocol
- * @since open-graph-protocol 2.0.0
+ * @package open-graph-protocol-framework
+ * @since 2.0.0
  */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
 /**
  * WPML support, metadata.
@@ -46,7 +50,7 @@ class Open_Graph_Protocol_WPML {
 		$locale = get_locale();
 
 		$languages = array();
-		$element_translations = apply_filters( 'wpml_get_element_translations', null, $post->ID );
+		$element_translations = apply_filters( 'wpml_get_element_translations', null, $post->ID ); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
 		if ( is_array( $element_translations ) ) {
 			$languages = array_keys( $element_translations );
 		}

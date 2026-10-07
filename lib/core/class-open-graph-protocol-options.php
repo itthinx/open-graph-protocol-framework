@@ -15,9 +15,13 @@
  * This header and all notices must be kept intact.
  *
  * @author Karim Rahimpur
- * @package open-graph-protocol
- * @since open-graph-protocol 1.0.0
+ * @package open-graph-protocol-framework
+ * @since 1.0.0
  */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
 /**
  * Options handler.
@@ -57,7 +61,7 @@ class Open_Graph_Protocol_Options {
 		$options = get_option( self::option_key );
 		if ( $options === false ) {
 			$options = array( self::general => array() );
-			add_option( self::option_key, $options, null, 'no' );
+			add_option( self::option_key, $options, '', 'no' );
 		}
 	}
 

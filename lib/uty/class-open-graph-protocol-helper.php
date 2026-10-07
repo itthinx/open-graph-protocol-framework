@@ -15,9 +15,13 @@
  * This header and all notices must be kept intact.
  *
  * @author Karim Rahimpur
- * @package open-graph-protocol
- * @since open-graph-protocol 1.0.0
+ * @package open-graph-protocol-framework
+ * @since 1.0.0
  */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
 /**
  * Plugin helper class.
@@ -52,4 +56,18 @@ class Open_Graph_Protocol_Helper {
 		$title = trim( preg_replace('/\s+/', ' ', $title ) );
 		return $title;
 	}
+
+	/**
+	 * Provide the current URL.
+	 *
+	 * @since 3.0.0
+	 *
+	 * @return string
+	 */
+	public static function get_current_url() {
+		$host = wp_unslash( $_SERVER['HTTP_HOST'] ?? '' ); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+		$uri  = wp_unslash( $_SERVER['REQUEST_URI'] ?? '' ); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+		return sanitize_url( ( is_ssl() ? 'https://' : 'http://' ) . $host . $uri );
+	}
+
 }

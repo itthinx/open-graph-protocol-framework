@@ -3,22 +3,26 @@ Contributors: itthinx
 Donate link: https://www.itthinx.com/shop/
 Tags: ogp, open graph protocol, facebook, X, google
 Requires at least: 6.0
-Tested up to: 6.9
+Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 2.1.0
+Stable tag: 3.0.0
 License: GPLv3
 
-The Open Graph Protocol enables any web page to become a rich object in a social graph. This plugin renders meta tags within an extension framework.
+Make your content look great when shared on social media. Automatically controls how your posts and pages appear on Facebook, X, and other social platforms.
 
 == Description ==
 
+Make your content look great when shared on social media. Automatically controls how your posts and pages appear on Facebook, X, and other social platforms.
+
 The [Open Graph protocol](https://ogp.me/) enables any web page to become a rich object in a social graph. For instance, this is used on Facebook to allow any web page to have the same functionality as any other object on Facebook.
 
-This WordPress plugin is aimed at automating the process of adding basic and optional metadata to a site's pages. It is also designed to act as a framework for other plugins or themes and allows to modify and adapt the information provided as needed.
+This WordPress plugin automates the process of adding basic and optional metadata to a site's pages. It is also designed to act as a framework for other plugins or themes and allows to modify and adapt the information provided as needed.
 
 If you find this plugin useful and would like to support our work, you can do so by purchasing in our [Shop](https://www.itthinx.com/shop/), thank you!
 
 Supports [WooCommerce](https://wordpress.org/plugins/woocommerce/) to include essential product metadata on product pages.
+
+The plugin allows you to choose a fallback image which is used when no featured image is set for shared pages, posts, etc. This helps to maintain a visually consistent experience on social platforms and feeds.
 
 ### Usage ###
 
@@ -34,6 +38,8 @@ Install and activate the plugin. It will automatically render the following meta
 - `og:locale:alternate` : Indicates additional locales available with [WPML](https://wpml.org/) and [Polylang](https://wordpress.org/plugins/polylang/).
 
 The content of the `og:image:alt` property is based on the Alt Text of the featured image, the image's Caption in lack thereof, or ultimately the image's Description in lack of the latter. If any of those are empty, the property is not rendered.
+
+You can also choose a fallback image that is used on social networks if no featured image is set for a shared page.
 
 ### Filters ###
 
