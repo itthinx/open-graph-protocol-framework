@@ -125,7 +125,7 @@ class Settings {
 			'<input type="hidden" name="open-graph-protocol-framework-fallback-image-id" id="open-graph-protocol-framework-fallback-image-id" value="%s" />',
 			esc_attr( $fallback_image_id )
 		);
-		printf( '<button type="button" class="button button-secondary" id="open-graph-protocol-framework-fallback-image-url-button">%s</button>',
+		printf( '<button type="button" class="button button-secondary" id="open-graph-protocol-framework-fallback-image-url-button" style="vertical-align: middle;">%s</button>',
 			esc_html( 'Choose', 'open-graph-protocol-framework' )
 		);
 
