@@ -176,6 +176,16 @@ class Open_Graph_Protocol {
 	 * @return array
 	 */
 	public static function plugin_action_links( $links ) {
+		if ( current_user_can( 'manage_options' ) ) {
+			array_unshift(
+				$links,
+				sprintf(
+					'<a href="%1$s">%2$s</a>',
+					esc_url( get_admin_url( null, 'admin.php?page=open-graph-protocol-framework' ) ),
+					esc_html_x( 'Settings', 'Plugin action link', 'open-graph-protocol-framework' )
+				)
+			);
+		}
 		$links[] = '<a href="https://docs.itthinx.com/document/open-graph-protocol-framework/">' . esc_html__( 'Documentation', 'open-graph-protocol-framework' ) . '</a>';
 		$links[] = '<a href="https://www.itthinx.com/shop/">' . esc_html__( 'Shop', 'open-graph-protocol-framework' ) . '</a>';
 		return $links;

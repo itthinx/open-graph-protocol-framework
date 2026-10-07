@@ -27,6 +27,8 @@ require_once OPEN_GRAPH_PROTOCOL_CORE_LIB . '/class-open-graph-protocol-options.
 require_once OPEN_GRAPH_PROTOCOL_CORE_LIB . '/class-open-graph-protocol.php';
 if ( !is_admin() ) {
 	require_once OPEN_GRAPH_PROTOCOL_CORE_LIB . '/class-open-graph-protocol-meta.php';
+} else {
+	require_once OPEN_GRAPH_PROTOCOL_ADMIN_LIB . '/class-settings.php';
 }
 
 /**
