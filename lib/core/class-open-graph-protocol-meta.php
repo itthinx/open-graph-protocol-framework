@@ -86,7 +86,6 @@ class Open_Graph_Protocol_Meta {
 					$attachment_id = $fallback_image_id;
 				}
 			}
-			$attachment_id = get_post_thumbnail_id( $post->ID );
 			if ( $attachment_id ) {
 				list( $src, $width, $height ) = wp_get_attachment_image_src( $attachment_id, 'full' );
 				if ( ! empty( $src ) ) {
