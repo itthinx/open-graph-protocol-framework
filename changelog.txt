@@ -6,8 +6,10 @@
 * Validation WordPress.Security.EscapeOutput.OutputNotEscaped.
 * Removed calls to deprecated wp_cache_reset().
 * Replaced add_option() deprecated argument.
-* Added bypassing comments for false-positive warnings.
-* Added missing restriction to prevent direct access to scripts.
+* Validation reviewed instances of WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound.
+* Validation reviewed instances of WordPress.DB.DirectDatabaseQuery.DirectQuery.
+* Validation reviewed instances of WordPress.DB.DirectDatabaseQuery.NoCaching.
+* Added missing ABSPATH checks.
 * Added missing translators comments.
 * Removed unecessary and deprecated wp_cache_reset() function.
 
