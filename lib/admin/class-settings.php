@@ -45,7 +45,8 @@ class Settings {
 	public static function admin_init() {
 		register_setting(
 			'open-graph-protocol-framework',
-			'fallback-image-url',
+			'open-graph-protocol-framework-fallback-image-url',
+			// 'open-graph-protocol-framework-fallback-image-id',
 			array(
 				'type' => 'string',
 				'description' => 'URL of the fallback image',
@@ -59,7 +60,8 @@ class Settings {
 			'open-graph-protocol-framework'
 		);
 		add_settings_field(
-			'fallback-image-url',
+			'open-graph-protocol-framework-fallback-image-url',
+			// 'open-graph-protocol-framework-fallback-image-id',
 			__( 'Fallback Image', 'open-graph-protocol-framework' ),
 			array( __CLASS__, 'fallback_image' ),
 			'open-graph-protocol-framework',
@@ -115,11 +117,21 @@ class Settings {
 	 */
 	public static function fallback_image() {
 
-		$fallback_image_url = get_option( 'fallback-image-url' ) ?? '';
+		$fallback_image_url = get_option( 'open-graph-protocol-framework-fallback-image-url' ) ?? '';
+
+// 		$fallback_image_id = get_option( 'open-graph-protocol-framework-fallback-image-id' ) ?? 0;
+// 		$fallback_image_url = '';
+// 		if ( $fallback_image_id ) {
+// 			$fallback_image_url = wp_get_attachment_url( $fallback_image_id );
+// 		}
 
 		printf(
-			'<input type="url" name="fallback-image-url" id="fallback-image-url" value="%s" class />',
+			'<input type="url" name="open-graph-protocol-framework-fallback-image-url" id="open-graph-protocol-framework-fallback-image-url" value="%s" class />',
 			esc_url( $fallback_image_url )
+		);
+		printf(
+			'<input type="hidden" name="open-graph-protocol-framework-fallback-image-id" id="open-graph-protocol-framework-fallback-image-id" value="%s" />',
+			esc_attr( $fallback_image_id )
 		);
 		printf( '<button type="button" class="button button-secondary" id="open-graph-protocol-framework-fallback-image-url-button">%s</button>',
 			esc_html( 'Choose', 'open-graph-protocol-framework' )
@@ -182,7 +194,7 @@ class Settings {
 					multiple: false
 				}).on('select', function() {
 					var attachment = custom_uploader.state().get('selection').first().toJSON();
-					$('#fallback-image-url').val(attachment.url);
+					$('#open-graph-protocol-framework-fallback-image-url').val(attachment.url);
 					$('#open-graph-protocol-framework-fallback-image-url-preview-image').attr('src', attachment.url);
 					$('#open-graph-protocol-framework-fallback-image-url-preview-container').show();
 					$('#open-graph-protocol-framework-fallback-image-url-remove').show();
@@ -192,12 +204,12 @@ class Settings {
 
 			$('#open-graph-protocol-framework-fallback-image-url-remove').click(function(e) {
 				e.preventDefault();
-				$('#fallback-image-url').val('');
+				$('#open-graph-protocol-framework-fallback-image-url').val('');
 				$('#open-graph-protocol-framework-fallback-image-url-preview-container').hide();
 				$(this).hide();
 			});
 
-			$('#fallback-image-url').on('input', function() {
+			$('#open-graph-protocol-framework-fallback-image-url').on('input', function() {
 				if ($(this).val() === '') {
 					$('#open-graph-protocol-framework-fallback-image-url-preview-container').hide();
 					$('#open-graph-protocol-framework-fallback-image-url-remove').hide();

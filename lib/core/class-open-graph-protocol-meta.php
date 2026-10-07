@@ -77,7 +77,15 @@ class Open_Graph_Protocol_Meta {
 		$metas['og:type'] = $type;
 
 		// image
-		if ( isset( $post->post_type ) && post_type_supports( $post->post_type, 'thumbnail' ) && has_post_thumbnail() ) {
+		if ( isset( $post->post_type ) && post_type_supports( $post->post_type, 'thumbnail' ) ) {
+			if ( has_post_thumbnail() ) {
+				$attachment_id = get_post_thumbnail_id( $post->ID );
+			} else {
+				$fallback_image_id = get_option( 'open-graph-protocol-framework-fallback-image-id' ) ?? '';
+				if ( !empty( $fallback_image_id ) ) {
+					$attachment_id = $fallback_image_id;
+				}
+			}
 			$attachment_id = get_post_thumbnail_id( $post->ID );
 			if ( $attachment_id ) {
 				list( $src, $width, $height ) = wp_get_attachment_image_src( $attachment_id, 'full' );
