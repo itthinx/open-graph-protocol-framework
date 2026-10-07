@@ -43,8 +43,8 @@ class Open_Graph_Protocol_Meta {
 	 */
 	public static function wp_head() {
 
-		global $post, $sitepress;
-		$current_url = ( is_ssl() ? 'https://' : 'http://' ) . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; // phpcs:ignore WordPress.Security.ValidatedSanitizedInput
+		global $post;
+		$current_url = Open_Graph_Protocol_Helper::get_current_url();
 
 		$metas = array();
 
