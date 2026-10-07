@@ -48,7 +48,7 @@
  * This header and all notices must be kept intact.
  *
  * @author Karim Rahimpur
- * @package open-graph-protocol
+ * @package open-graph-protocol-framework
  * @since 1.0.0
  *
  */

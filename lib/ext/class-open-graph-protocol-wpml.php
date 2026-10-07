@@ -15,8 +15,8 @@
  * This header and all notices must be kept intact.
  *
  * @author Karim Rahimpur
- * @package open-graph-protocol
- * @since open-graph-protocol 2.0.0
+ * @package open-graph-protocol-framework
+ * @since 2.0.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
