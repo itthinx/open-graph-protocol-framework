@@ -153,9 +153,9 @@ class Open_Graph_Protocol_Meta {
 		} else {
 			$what = '';
 			if ( is_author() ) {
-				$what = esc_html__( 'Author', OPEN_GRAPH_PROTOCOL_PLUGIN_DOMAIN );
+				$what = esc_html__( 'Author', 'open-graph-protocol-framework' );
 			} else if ( is_archive() ) {
-				$what = esc_html__( 'Archive', OPEN_GRAPH_PROTOCOL_PLUGIN_DOMAIN );
+				$what = esc_html__( 'Archive', 'open-graph-protocol-framework' );
 			}
 			if ( !empty( $what ) ) {
 				$description = sprintf( '%s : %s', $what, $title );
@@ -175,7 +175,7 @@ class Open_Graph_Protocol_Meta {
 			}
 		}
 
-		echo apply_filters( 'open_graph_protocol_echo_metas', $m );
+		echo apply_filters( 'open_graph_protocol_echo_metas', $m ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	}
 
 	/**
