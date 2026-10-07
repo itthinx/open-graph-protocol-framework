@@ -19,6 +19,10 @@
  * @since open-graph-protocol 1.0.0
  */
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * Plugin core class.
  */
@@ -107,6 +111,7 @@ class Open_Graph_Protocol {
 		global $wpdb;
 		$result = array();
 		if ( is_multisite() ) {
+			// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching
 			$blogs = $wpdb->get_results( $wpdb->prepare(
 				"SELECT blog_id FROM $wpdb->blogs WHERE site_id = %d AND archived = '0' AND spam = '0' AND deleted = '0'",
 				$wpdb->siteid

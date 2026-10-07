@@ -11,7 +11,7 @@
  * Donate-Link: https://www.itthinx.com/shop/
  * License: GPLv3
  *
- * Copyright (c) 2012 - 2025 "kento" Karim Rahimpur www.itthinx.com
+ * Copyright (c) 2012 - 2026 "kento" Karim Rahimpur www.itthinx.com
  *
  * This code is released under the GNU General Public License Version 3.
  * The following additional terms apply to all files as per section
@@ -52,6 +52,10 @@
  * @since 1.0.0
  *
  */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
 /**
  * Plugin version.

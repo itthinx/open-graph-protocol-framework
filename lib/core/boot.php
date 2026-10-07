@@ -19,6 +19,10 @@
  * @since open-graph-protocol 1.0.0
  */
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 require_once OPEN_GRAPH_PROTOCOL_CORE_LIB . '/class-open-graph-protocol-options.php';
 require_once OPEN_GRAPH_PROTOCOL_CORE_LIB . '/class-open-graph-protocol.php';
 if ( !is_admin() ) {
