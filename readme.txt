@@ -1,14 +1,14 @@
 === Open Graph Protocol Framework ===
 Contributors: itthinx
 Donate link: https://www.itthinx.com/shop/
-Tags: ogp, open graph protocol, facebook, X, google
+Tags: ogp, open graph, facebook, X, google
 Requires at least: 6.0
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 3.0.0
+Stable tag: 3.1.0
 License: GPLv3
 
-Make your content look great when shared on social media. Automatically controls how your posts and pages appear on Facebook, X, and other social platforms.
+Make your content look great when shared on social media. Automatically controls how your pages appear on Facebook, X, and other social platforms.
 
 == Description ==
 

@@ -1,5 +1,11 @@
 == Open Graph Protocol Framework - WordPress plugin by itthinx - Changelog ==
 
+= 3.1.0 =
+* WordPress 7.1 compatible.
+* Fixed PHP Warning Undefined variable $attachment_id.
+* Revised tags.
+* Revised description.
+
 = 3.0.0 =
 * WordPress 7.1 compatible.
 * Added a menu and settings page.
