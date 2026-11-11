@@ -2,6 +2,7 @@
 
 = 3.1.0 =
 * WordPress 7.1 compatible.
+* Fixed PHP Warning Undefined variable $attachment_id.
 
 = 3.0.0 =
 * WordPress 7.1 compatible.

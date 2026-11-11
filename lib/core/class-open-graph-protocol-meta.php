@@ -78,6 +78,7 @@ class Open_Graph_Protocol_Meta {
 
 		// image
 		if ( isset( $post->post_type ) && post_type_supports( $post->post_type, 'thumbnail' ) ) {
+			$attachment_id = null;
 			if ( has_post_thumbnail() ) {
 				$attachment_id = get_post_thumbnail_id( $post->ID );
 			} else {
@@ -86,7 +87,7 @@ class Open_Graph_Protocol_Meta {
 					$attachment_id = $fallback_image_id;
 				}
 			}
-			if ( $attachment_id ) {
+			if ( is_numeric( $attachment_id ) ) {
 				list( $src, $width, $height ) = wp_get_attachment_image_src( $attachment_id, 'full' );
 				if ( ! empty( $src ) ) {
 					$metas['og:image'] = $src;
