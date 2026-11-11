@@ -5,7 +5,7 @@ Tags: ogp, open graph protocol, facebook, X, google
 Requires at least: 6.0
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 3.0.0
+Stable tag: 3.1.0
 License: GPLv3
 
 Make your content look great when shared on social media. Automatically controls how your posts and pages appear on Facebook, X, and other social platforms.
